@@ -13,6 +13,11 @@
 <body>
   <nav>
     <input type="text" name="search" autocomplete="on" class="search" id="searchStreams">
+    <div class="chooseStuff">
+      <input type="radio" name="stuff" value="10" checked>
+      <input type="radio" name="stuff" value="20">
+      <input type="radio" name="stuff" value="30">
+    </div>
   </nav>
   <ul class="searchList">
 
@@ -32,6 +37,7 @@
     align-items: center;
     justify-content: center;
   }
+
   .searchList {
     position: relative;
     height: calc(100vh - 60px);
