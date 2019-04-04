@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="main.js">
+  </script>
+  <link rel="stylesheet" href="reset.css">
+</head>
+
+<body>
+  <nav>
+    <input type="text" name="search" autocomplete="on" class="search" id="searchStreams">
+  </nav>
+  <ul class="searchList">
+
+  </ul>
+</body>
+
+<style media="screen">
+  .streamer {
+    background-color: red;
+  }
+
+  nav {
+    position: relative;
+    background-color: orange;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .searchList {
+    position: relative;
+    height: calc(100vh - 60px);
+    width: 100%;
+    display: grid;
+    max-width: 1200px;
+    margin: 50px auto;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+  }
+</style>
+
+</html>
