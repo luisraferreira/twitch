@@ -1,0 +1,39 @@
+nav {
+  position: relative;
+  background-color: orange;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  nav .chooseStuff {
+    position: fixed;
+    right: 5%; }
+    nav .chooseStuff label {
+      display: inline-block; }
+
+.searchList {
+  position: relative;
+  height: calc(100vh - 60px);
+  width: 100%;
+  display: grid;
+  max-width: 1200px;
+  margin: 50px auto;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px; }
+  .searchList .streamer {
+    background-color: #fff;
+    border: 2px solid orange;
+    box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.15); }
+    .searchList .streamer .text {
+      padding: 15px 30px; }
+      .searchList .streamer .text p {
+        font-family: 'Heebo', Aria, sans-serif;
+        font-size: 16px;
+        font-weight: bold; }
+        .searchList .streamer .text p span {
+          font-weight: normal; }
+
+.stream {
+  height: 100vh;
+  width: 100%;
+  background-color: red; }
