@@ -47,6 +47,7 @@ window.onload = function() {
     } else {
       $('.streamer').remove();
       $('.searchList').hide();
+      
     }
 
   }

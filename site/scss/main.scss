@@ -52,4 +52,19 @@ nav {
   height: 100vh;
   width: 100%;
   background-color: red;
+  color: white;
+
+  iframe {
+    height: 80vh;
+    width: 100%;
+
+  }
+
+  .erro {
+    color: white;
+    font-size: 100px;
+    position: relative;;
+    margin: 0 auto;
+    font-family: 'Heebo', Aria, sans-serif;
+  }
 }

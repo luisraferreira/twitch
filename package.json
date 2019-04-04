@@ -17,8 +17,12 @@
   },
   "homepage": "https://github.com/luisraferreira/twitch#readme",
   "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
     "browser-sync": "^2.26.3",
     "gulp": "^4.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-plumber": "^1.2.1",
     "gulp-sass": "^4.0.2"
   }
 }
