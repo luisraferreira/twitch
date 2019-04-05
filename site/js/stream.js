@@ -1,5 +1,5 @@
 window.onload = function() {
-
+  
   //Se a query string não existir, mandar para a página inicial
   if (!window.location.href.includes('?')) {
     location.href = "/";
@@ -38,7 +38,7 @@ window.onload = function() {
 
       },
       error: function(xhr, responseType, error) {
-        $('.stream').append('<div class="erro">ERRO! Pedimos desculpa mas algo de errado não está certo</div>')        
+        $('.stream').append('<div class="erro">ERRO! Pedimos desculpa mas algo de errado não está certo</div>')
       }
     });
 

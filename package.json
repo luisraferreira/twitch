@@ -22,7 +22,10 @@
     "browser-sync": "^2.26.3",
     "gulp": "^4.0.0",
     "gulp-babel": "^8.0.0",
+    "gulp-obfuscate": "^0.2.9",
     "gulp-plumber": "^1.2.1",
-    "gulp-sass": "^4.0.2"
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.2"
   }
 }

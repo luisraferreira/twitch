@@ -6,6 +6,7 @@ window.onload = function() {
   radioBtn.on('click', search);
   input.addEventListener('keyup', handleInput);
 
+
   //Search incremental
   function search() {
     var inputValue = input.value;
@@ -47,7 +48,7 @@ window.onload = function() {
     } else {
       $('.streamer').remove();
       $('.searchList').hide();
-      
+
     }
 
   }

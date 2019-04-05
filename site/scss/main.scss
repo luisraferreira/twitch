@@ -1,3 +1,5 @@
+@import './cenas';
+
 nav {
   position: relative;
   background-color: orange;
@@ -15,7 +17,6 @@ nav {
     }
   }
 }
-
 .searchList {
   position: relative;
   height: calc(100vh - 60px);
@@ -46,8 +47,6 @@ nav {
     }
   }
 }
-
-
 .stream {
   height: 100vh;
   width: 100%;
