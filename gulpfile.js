@@ -3,7 +3,7 @@ var sass = require('gulp-sass');
 var babel = require('gulp-babel');
 var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
-var obfuscate = require('gulp-obfuscate');
+//var obfuscate = require('gulp-obfuscate');
 var plumber = require('gulp-plumber');
 var browserSync = require("browser-sync").create();
 
@@ -14,8 +14,8 @@ function script(file) {
     		.pipe(babel({
     			presets: ['@babel/preset-env']
     		}))
-        .pipe(obfuscate({ replaceMethod: obfuscate.ZALGO }))
-        .pipe(uglify())
+        //.pipe(obfuscate({ replaceMethod: obfuscate.ZALGO }))
+        //.pipe(uglify())
         .pipe(rename({dirname:''}))
     		.pipe(gulp.dest('site/newjs'))
   );

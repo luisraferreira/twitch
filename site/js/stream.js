@@ -1,10 +1,9 @@
 window.onload = function() {
-  
   //Se a query string não existir, mandar para a página inicial
   if (!window.location.href.includes('?')) {
     location.href = "/";
   } else {
-    var streamer = window.location.href.split('?')[1];
+    const streamer = window.location.href.split('?')[1];
     $.ajax({
       url: `https://api.twitch.tv/kraken/streams/${streamer}`,
       type: 'GET',
@@ -14,31 +13,33 @@ window.onload = function() {
       success: function(response) {
         //Se a stream não existir, mostrar mensagem de erro
         if (response.stream == null) {
-          console.log('erro');
-          $('.stream').append('<div class="erro">ERRO! ESSE STREAMER NÃO EXISTE</div>')
+          document.querySelector('.stream').insertAdjacentHTML('beforeend', '<div class="erro"><p>Talvez não estejas no sítio certo.<span>Este streamer não existe ou neste momento não está em direto</span></p><img src="/css/errorGif.gif"</div>');
         }
         //Se a stream existir, mostrar toda a info dela
         else {
-          var streamerName = response.stream.channel.name,
+          const streamerName = response.stream.channel.name,
             views = response.stream.viewers,
             logo = response.stream.channel.logo,
-            description = response.stream.channel.status;
-            console.log(response);
+            description = response.stream.channel.status,
+            game = response.stream.game;
 
           var templateStream = `<div>
                                   <iframe src="https://player.twitch.tv/?channel=${streamerName}"></iframe>
                                   <div class="streamInfo">
-                                    <p id="viewers">Viewers: ${views}</p>
-                                    <p>Description: ${description}</p>
+                                    <img src="${logo}">
+                                    <div class="text">
+                                    <p class="description">${description}<span><i class="fa fa-gamepad"></i>${game}</span></p>
+                                      <p id="viewers"><i class="fa fa-user"></i><span>${views}</span></p>
+                                    </div>
                                   </div>
                                 </div>`;
 
-          $('.stream').append(templateStream);
+          document.querySelector('.stream').insertAdjacentHTML('beforeend', templateStream);
         }
 
       },
       error: function(xhr, responseType, error) {
-        $('.stream').append('<div class="erro">ERRO! Pedimos desculpa mas algo de errado não está certo</div>')
+        document.querySelector('.stream').insertAdjacentHTML('beforeend', '<div class="erro"><p>Talvez não estejas no sítio certo.</p><img src="/css/errorGif.gif"</div>');
       }
     });
 
@@ -48,7 +49,7 @@ window.onload = function() {
   setInterval(updateViewers, 20000);
 
   function updateViewers() {
-    var streamer = window.location.href.split('?')[1];
+    const streamer = window.location.href.split('?')[1];
 
     $.ajax({
       url: `https://api.twitch.tv/kraken/streams/${streamer}`,
@@ -57,10 +58,8 @@ window.onload = function() {
         xhr.setRequestHeader('Client-ID', '3y2vfbblxxd7njgs723mfvu9rp42nj');
       },
       success: function(response) {
-        console.log(response);
-        var newViewers = response.stream.viewers;
-
-        $('#viewers').text('Viewers:' + newViewers)
+        const newViewers = response.stream.viewers;
+        document.querySelector('#viewers span').innerText = newViewers;
       },
     });
   }

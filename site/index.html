@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>BLIP - Twitch</title>
+  <link rel="icon" href="https://static.twitchcdn.net/assets/favicon-75270f9df2b07174c23c.ico">
   <!-- CSS -->
   <link rel="stylesheet" href="/css/reset.css">
   <link rel="stylesheet" href="/css/main.css">
@@ -15,19 +16,29 @@
 
 <body>
   <nav>
-    <input type="text" name="search" autocomplete="on" class="search" id="searchStreams">
-    <div class="chooseStuff">
-      <label for="">10<input type="radio" name="stuff" value="10" checked>
-      </label>
-      <label for="">20<input type="radio" name="stuff" value="20">
-      </label>
-      <label for="">30<input type="radio" name="stuff" value="30">
-      </label>
+    <div class="searchContainer">
+      <input type="text" id="search-bar" class="search" placeholder="O que queres ver hoje?">
     </div>
   </nav>
   <ul class="searchList">
-
+    <div class="chooseView">
+      <label class="container">12
+        <input type="radio" name="radio" value="12">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">24
+        <input type="radio" name="radio" value="24">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">36
+        <input type="radio" name="radio" value="36">
+        <span class="checkmark"></span>
+      </label>
+    </div>
+    <div class="searchResults"></div>
+    <div class="seeMore"></div>
   </ul>
+
 </body>
 
 
