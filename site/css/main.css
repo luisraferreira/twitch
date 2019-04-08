@@ -12,7 +12,6 @@ nav {
   nav .search {
     width: 100%;
     max-width: 300px;
-    height: 40px;
     border: none;
     background: transparent;
     border-bottom: 2px solid #5950dc;
@@ -27,6 +26,16 @@ nav {
       color: #eaeaea; }
   nav.searching {
     height: 80px; }
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+  position: relative; }
+  .searchContainer i {
+    color: #fff;
+    position: absolute;
+    right: 0;
+    top: 1px; }
 
 .searchList {
   display: none;
