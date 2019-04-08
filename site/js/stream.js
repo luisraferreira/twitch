@@ -38,6 +38,7 @@ window.onload = function() {
         }
 
       },
+      
       error: function(xhr, responseType, error) {
         document.querySelector('.stream').insertAdjacentHTML('beforeend', '<div class="erro"><p>Talvez não estejas no sítio certo.</p><img src="/css/errorGif.gif"</div>');
       }

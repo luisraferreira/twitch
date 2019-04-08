@@ -43,6 +43,7 @@ window.onload = function() {
         //A Twitch API necessita que envie no Request Header um client id que foi gerado no momento de criação do projeto.
         beforeSend: function(xhr) {
           xhr.setRequestHeader('Client-ID', '3y2vfbblxxd7njgs723mfvu9rp42nj');
+          cleanDOM();
           document.querySelector('.loading').style.display = "block";
         },
         complete: function() {
@@ -53,7 +54,8 @@ window.onload = function() {
           populatePage(response);
         },
         error: function(xhr,responseType) {
-          console.log("s");
+          const errorTemplate = `<div class="error">Pedimos desculpa mas houve um problema com o servidor".</div>`;
+          document.querySelector('.searchResults').insertAdjacentHTML('afterbegin', errorTemplate);
         }
       });
     } else {
@@ -174,7 +176,8 @@ window.onload = function() {
         populatePage(response);
       },
       error: function(xhr, error, responseType) {
-        console.log(xhr, error, responseType);
+        const errorTemplate = `<div class="error">Pedimos desculpa mas houve um problema com o servidor".</div>`;
+        document.querySelector('.searchResults').insertAdjacentHTML('afterbegin', errorTemplate);
       }
     });
   }
