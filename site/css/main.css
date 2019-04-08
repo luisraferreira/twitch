@@ -29,6 +29,7 @@ nav {
     height: 80px; }
 
 .searchList {
+  display: none;
   position: relative;
   width: 100%;
   max-width: 1200px;
@@ -44,6 +45,9 @@ nav {
     display: none;
     flex-wrap: wrap;
     justify-content: space-between; }
+    .searchList .searchResults .loading {
+      display: none;
+      margin: 0 auto; }
     .searchList .searchResults .error {
       font-size: 30px;
       font-family: 'Heebo', Aria, sans-serif;

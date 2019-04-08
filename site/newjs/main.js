@@ -32,6 +32,7 @@ window.onload = function () {
 
     if (inputValue != '') {
       document.querySelector('nav').classList.add('searching');
+      document.querySelector('.searchList').style.display = "block";
       document.querySelector('.searchResults').style.display = "flex";
       $.ajax({
         //Aqui o resultado da procura vai depender do que o utilizador tenha escrito no input e do que tenha selecionado nos radiobuttons.
@@ -40,10 +41,17 @@ window.onload = function () {
         //A Twitch API necessita que envie no Request Header um client id que foi gerado no momento de criação do projeto.
         beforeSend: function beforeSend(xhr) {
           xhr.setRequestHeader('Client-ID', '3y2vfbblxxd7njgs723mfvu9rp42nj');
+          document.querySelector('.loading').style.display = "block";
+        },
+        complete: function complete() {
+          document.querySelector('.loading').style.display = "none";
         },
         success: function success(response) {
           cleanDOM();
           populatePage(response);
+        },
+        error: function error(xhr, responseType) {
+          console.log("s");
         }
       });
     } else {
@@ -141,9 +149,13 @@ window.onload = function () {
       //A Twitch API necessita que envie no Request um client id que foi gerado no momento de criação do projeto.
       beforeSend: function beforeSend(xhr) {
         xhr.setRequestHeader('Client-ID', '3y2vfbblxxd7njgs723mfvu9rp42nj');
+        cleanDOM();
+        document.querySelector('.loading').style.display = "block";
+      },
+      complete: function complete() {
+        document.querySelector('.loading').style.display = "none";
       },
       success: function success(response) {
-        cleanDOM();
         populatePage(response);
       },
       error: function error(xhr, _error, responseType) {
